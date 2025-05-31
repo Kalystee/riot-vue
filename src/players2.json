@@ -1,36 +1,6 @@
 {
   "players": [
     {
-      "id": "1",
-      "summonerName": "TheShy",
-      "rank": "Challenger",
-      "winRate": 67.5,
-      "mainRole": "Top",
-      "mainChampions": [
-        "Jax",
-        "Jayce",
-        "Fiora"
-      ],
-      "totalGames": 856,
-      "kdaRatio": 3.2,
-      "averageCS": 8.7
-    },
-    {
-      "id": "2",
-      "summonerName": "Faker",
-      "rank": "Challenger",
-      "winRate": 71.2,
-      "mainRole": "Mid",
-      "mainChampions": [
-        "Ahri",
-        "Zed",
-        "LeBlanc"
-      ],
-      "totalGames": 923,
-      "kdaRatio": 4.1,
-      "averageCS": 9.1
-    },
-    {
       "id": "3",
       "summonerName": "Uzi",
       "rank": "Challenger",
@@ -50,7 +20,7 @@
       "summonerName": "CoreJJ",
       "rank": "GrandMaster",
       "winRate": 63.7,
-      "mainRole": "Support",
+      "mainRole": "SUPPORT",
       "mainChampions": [
         "Thresh",
         "Leona",
@@ -61,71 +31,11 @@
       "averageCS": 1.2
     },
     {
-      "id": "5",
-      "summonerName": "Canyon",
-      "rank": "Challenger",
-      "winRate": 68.9,
-      "mainRole": "Jungle",
-      "mainChampions": [
-        "Lee Sin",
-        "Nidalee",
-        "Graves"
-      ],
-      "totalGames": 834,
-      "kdaRatio": 3.9,
-      "averageCS": 7.2
-    },
-    {
-      "id": "6",
-      "summonerName": "Caps",
-      "rank": "Challenger",
-      "winRate": 64.3,
-      "mainRole": "Mid",
-      "mainChampions": [
-        "Sylas",
-        "Akali",
-        "Yasuo"
-      ],
-      "totalGames": 745,
-      "kdaRatio": 3.7,
-      "averageCS": 8.9
-    },
-    {
-      "id": "7",
-      "summonerName": "Ruler",
-      "rank": "Challenger",
-      "winRate": 66.1,
-      "mainRole": "ADC",
-      "mainChampions": [
-        "Jinx",
-        "Aphelios",
-        "Xayah"
-      ],
-      "totalGames": 812,
-      "kdaRatio": 4.2,
-      "averageCS": 9.2
-    },
-    {
-      "id": "8",
-      "summonerName": "Keria",
-      "rank": "Challenger",
-      "winRate": 62.4,
-      "mainRole": "Support",
-      "mainChampions": [
-        "Pyke",
-        "Nautilus",
-        "Rakan"
-      ],
-      "totalGames": 698,
-      "kdaRatio": 3.6,
-      "averageCS": 1.1
-    },
-    {
       "id": "9",
       "summonerName": "Chovy",
       "rank": "Challenger",
       "winRate": 69.7,
-      "mainRole": "Mid",
+      "mainRole": "MID",
       "mainChampions": [
         "Azir",
         "Viktor",
@@ -138,32 +48,287 @@
     {
       "id": "3999",
       "summonerName": "Deft",
-      "role": "ADC"
+      "mainRole": "ADC"
     },
     {
       "id": "1575",
       "summonerName": "Kalystee",
-      "role": "ADC"
+      "mainRole": "ADC"
     },
     {
       "id": "3480",
       "summonerName": "Ayamee",
-      "role": "MID"
+      "mainRole": "MID"
     },
     {
       "id": "bc8d",
       "summonerName": "Charrrrrles",
-      "role": "TOP"
+      "mainRole": "TOP"
     },
     {
       "id": "d2df",
       "summonerName": "Kalystee",
-      "role": "JUNGLE"
+      "mainRole": "JUNGLE"
     },
     {
-      "id": "a534",
+      "id": "1a50",
       "summonerName": "test",
-      "role": "JUNGLE"
+      "mainRole": "TOP"
+    },
+    {
+      "id": "448e",
+      "summonerName": "adasdasd",
+      "mainRole": "SUPPORT"
+    },
+    {
+      "id": "d1d8",
+      "summonerName": "aaaa",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "f022",
+      "summonerName": "aaaa",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "84a4",
+      "summonerName": "wewer",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "619f",
+      "summonerName": "asdads",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "fa53",
+      "summonerName": "asdas",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "af0a",
+      "summonerName": "asd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "cf33",
+      "summonerName": "asdas",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "d620",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "bddf",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "0a74",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "f80a",
+      "summonerName": "asdads",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "664a",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "de25",
+      "summonerName": "asd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "1501",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "00a2",
+      "summonerName": "asdads",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "1560",
+      "summonerName": "wqeqweqwe",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "c123",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "1d6b",
+      "summonerName": "asdads",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "dd80",
+      "summonerName": "asdads",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "2d01",
+      "summonerName": "aaaaaa",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "f2ae",
+      "summonerName": "a",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "17ca",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "7591",
+      "summonerName": "asd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "88fc",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "45a7",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "9238",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "7bfe",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "5ffb",
+      "summonerName": "asdasda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "2687",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "c0fd",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "0a85",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "cc4b",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "f271",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "5d42",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "936a",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "40f9",
+      "summonerName": "zzzz",
+      "mainRole": "JUNGLE"
+    },
+    {
+      "id": "1e84",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "4596",
+      "summonerName": "asda",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "9dcc",
+      "summonerName": "Test",
+      "mainRole": "SUPPORT"
+    },
+    {
+      "id": "8abb",
+      "summonerName": "asdasd",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "c1f7",
+      "summonerName": "aaaa",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "684b",
+      "summonerName": "aaaa",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "2db5",
+      "summonerName": "CoreJJ",
+      "mainRole": "TOP"
+    },
+    {
+      "id": "c45c",
+      "summonerName": "CoreJJ",
+      "mainRole": "SUPPORT"
+    },
+    {
+      "id": "a850",
+      "summonerName": "CoreJJ",
+      "mainRole": "JUNGLE"
+    },
+    {
+      "id": "d236",
+      "summonerName": "CoreJJ",
+      "mainRole": "MID"
+    },
+    {
+      "id": "a5b8",
+      "summonerName": "CoreJJSADASD",
+      "mainRole": "JUNGLE"
+    },
+    {
+      "id": "efe5",
+      "summonerName": "Chovy",
+      "mainRole": "MID"
+    },
+    {
+      "id": "8fd1",
+      "summonerName": "Chovy",
+      "mainRole": "JUNGLE"
+    },
+    {
+      "id": "927f",
+      "summonerName": "Kalystee",
+      "mainRole": "JUNGLE"
     }
   ]
 }

@@ -2,16 +2,32 @@
 import PulseLoader from "vue-spinner/src/PulseLoader.vue";
 import {onMounted, reactive} from "vue";
 import axios from "axios";
-import {useRoute} from "vue-router";
+import {useRoute, useRouter} from "vue-router";
 import BackButton from "@/components/BackButton.vue";
+import {useToast} from "vue-toastification";
 
 const route = useRoute()
+const toast = useToast();
+const router = useRouter();
 
 const playerId = route.params.id;
 const state = reactive({
   player: {},
   isLoading: true,
 });
+
+const deletePlayer = async () => {
+  const confirm = window.confirm("Are you sure you want to delete this player?");
+  if (confirm) {
+    axios.delete(`/api/players/${playerId}`).then(value => {
+      toast.success("Player deleted successfully.");
+      router.push("/players");
+    }).catch(error => {
+      toast.error("Failed to delete player. Please try again.");
+      throw new Error("Error deleting player:", error);
+    })
+  }
+};
 
 onMounted(async () => {
   try {
@@ -34,18 +50,21 @@ onMounted(async () => {
         <h3 class="text-xl font-bold mb-2">{{ state.player.summonerName }}</h3>
       </div>
       <div class="mb-5">
-        This is a {{ state.player.rank }} player playing mostly {{ state.player?.mainChampions ? state.player?.mainChampions[0] : "" }}, {{state.player?.mainChampions ? state.player?.mainChampions[1] : ""  }}
-        and {{state.player?.mainChampions ? state.player?.mainChampions[2] : ""  }}.
+        This is a {{ state.player.rank }} player playing mostly
+        {{ state.player?.mainChampions ? state.player?.mainChampions[0] : "" }},
+        {{ state.player?.mainChampions ? state.player?.mainChampions[1] : "" }}
+        and {{ state.player?.mainChampions ? state.player?.mainChampions[2] : "" }}.
         His winrate is {{ state.player.winRate }}% and he has played {{ state.player.totalGames }} games this season.
       </div>
-      
-      <RouterLink :to="`/players/edit/${state.player.id}`" class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-        Edit Player
-        </RouterLink>
 
-      <RouterLink :to="`/players/delete/${state.player.id}`" class="inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 ml-4">
-        Delete Player
+      <RouterLink :to="`/players/edit/${state.player.id}`"
+                  class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+        Edit Player
       </RouterLink>
+
+      <button @click="deletePlayer" class="inline-block bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 ml-4">
+        Delete Player
+      </button>
     </div>
   </section>
   <section v-else class="flex justify-center items-center h-screen">

@@ -5,6 +5,7 @@ import PlayersView from "@/views/PlayersView.vue";
 import PlayerView from "@/views/PlayerView.vue";
 import NotFoundView from "@/views/NotFoundView.vue";
 import AddPlayerView from "@/views/AddPlayerView.vue";
+import EditPlayerView from "@/views/EditPlayerView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,6 +30,12 @@ const router = createRouter({
             path: '/players/add',
             name: 'Add Player',
             component: AddPlayerView
+        },
+
+        {
+            path: '/players/edit/:id',
+            name: 'Edit Player',
+            component: EditPlayerView
         },
         {
             path: '/:catchAll(.*)',

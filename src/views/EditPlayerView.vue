@@ -1,16 +1,25 @@
 <script setup>
 
-import {reactive} from "vue";
+import {onMounted, reactive} from "vue";
 import axios from "axios";
 import {useToast} from "vue-toastification";
-import router from "@/router/index.js";
+import {useRoute, useRouter} from "vue-router";
+
+const route = useRoute();
+const router = useRouter();
+const toast = useToast();
+
+const playerId = route.params.id;
 
 const form = reactive({
   summonerName: '',
   role: 'TOP'
 })
 
-const toast = useToast();
+const state = reactive({
+  player: {},
+  isLoading: true,
+});
 
 const handleSubmit = async () => {
   const newPlayer = {
@@ -19,13 +28,27 @@ const handleSubmit = async () => {
   };
 
   axios.post('/api/players/', newPlayer).then(value => {
-    toast.success('Player added successfully:', value);
+    toast.success('Player edit successfully');
     router.push(`/players/${value.data.id}`)
   }).catch(error => {
     toast.error('Player could not be added. Please try again.');
-    throw new Error('Error adding player:', error);
+    throw new Error('Error adding player');
   })
 }
+
+onMounted(async () => {
+  try {
+    const response = await axios.get(`/api/players/${playerId}`);
+    console.log(response.data);
+    state.player = response.data;
+    form.summonerName = state.player.summonerName;
+    form.role = state.player.mainRole;
+  } catch (error) {
+    console.error("Error fetching player:", error);
+  } finally {
+    state.isLoading = false;
+  }
+})
 </script>
 
 <template>
@@ -33,7 +56,7 @@ const handleSubmit = async () => {
     <div class="container m-auto max-w-2xl py-24">
       <div class="bg-white px-6 py-8 mb-4 shadow-md rounded-md border m-4 md:m-0">
         <form @submit.prevent="handleSubmit">
-          <h2 class="text-3xl text-center font-semibold mb-6">Add Player</h2>
+          <h2 class="text-3xl text-center font-semibold mb-6">Edit Player</h2>
           <div class="mb-4">
             <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Summoner Name</label>
             <input v-model="form.summonerName" type="text" name="summonerName"
@@ -52,7 +75,7 @@ const handleSubmit = async () => {
           <button
               class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
               type="submit">
-            Add Player
+            Update player info
           </button>
         </form>
       </div>
