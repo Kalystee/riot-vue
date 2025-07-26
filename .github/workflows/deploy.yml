@@ -12,8 +12,8 @@ jobs:
       - name: Create GitHub App token
         uses: actions/create-github-app-token@v2
         with:
-          app-id: {{ secrets.KAL_APP_ID }}
-          private-key: {{ secrets.KAL_APP_SECRET }}
+          app-id: ${{ secrets.KAL_APP_ID }}
+          private-key: ${{ secrets.KAL_APP_SECRET }}
       - name: Checkout code
         uses: actions/checkout@v4
 
