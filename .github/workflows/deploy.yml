@@ -9,8 +9,13 @@ jobs:
   build-tag-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Create GitHub App token
+        uses: actions/create-github-app-token@v2
+        with:
+          app-id: {{ secrets.KAL_APP_ID }}
+          private-key: {{ secrets.KAL_APP_SECRET }}
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -31,8 +36,9 @@ jobs:
       - name: Create Git tag
         id: tag
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          git config --global user.name '${{ steps.generate-token.outputs.app-slug }}[bot]'
+          git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com'
+
           git tag v${{ steps.get_version.outputs.version }}
           git push origin v${{ steps.get_version.outputs.version }}
 
@@ -40,8 +46,6 @@ jobs:
         id: set_patch_version
         if: "!startsWith(github.event.head_commit.message, '[RELEASE]')"
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
           npm version patch -m ":bookmark: new version %s"
           git push origin main
 
