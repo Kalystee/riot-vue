@@ -43,7 +43,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
           npm version patch -m ":bookmark: new version %s"
-          git push origin v${{ steps.get_version.outputs.version }}
+          git push origin main
 
       - name: Install kubectl
         uses: azure/setup-kubectl@v1
